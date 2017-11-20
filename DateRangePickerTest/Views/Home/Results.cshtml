@@ -1,0 +1,26 @@
+﻿@model DateRangePickerTest.Models.TestViewModel
+
+<div class="row">
+    <div class="col-sm-4" style="margin-top: 25px;">
+        <div class="form-group">
+            @Html.LabelFor(m => m.SomeString):
+            @Model.SomeString
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.SomeInt):
+            @Model.SomeInt
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.SomeDateRange):
+            @(Model.SomeDateRange?.FullString)        
+            <br />Start: @(Model.SomeDateRange?.StartDateTime.Value.ToShortDateString())
+            <br />End: @(Model.SomeDateRange?.EndDateTime.Value.ToShortDateString())
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.SomeOtherDateRange):
+            @(Model.SomeOtherDateRange?.FullString)
+            <br />Start: @(Model.SomeOtherDateRange?.StartDateTime.Value.ToShortDateString())
+            <br />End: @(Model.SomeOtherDateRange?.EndDateTime.Value.ToShortDateString())
+        </div>
+    </div>
+</div>

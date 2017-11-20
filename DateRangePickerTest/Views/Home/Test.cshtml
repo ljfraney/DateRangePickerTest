@@ -1,0 +1,34 @@
+﻿@model DateRangePickerTest.Models.TestViewModel
+
+@{
+    ViewBag.Title = "Page 1";
+}
+
+<h2>Test Page</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.SomeString)
+        @Html.TextBoxFor(m => m.SomeString, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SomeInt)
+        @Html.TextBoxFor(m => m.SomeInt, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SomeDateRange)
+        @Html.EditorFor(m => m.SomeDateRange)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SomeOtherDateRange)
+        @Html.EditorFor(m => m.SomeOtherDateRange)
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+
+@section scripts
+{
+    @Html.DateRangeJavaScriptFor(m => m.SomeDateRange)
+    @Html.DateRangeJavaScriptFor(m => m.SomeOtherDateRange)
+}

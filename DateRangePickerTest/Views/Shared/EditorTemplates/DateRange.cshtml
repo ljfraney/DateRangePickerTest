@@ -1,0 +1,5 @@
+﻿@model DateRangePickerTest.Models.DateRange
+
+@Html.TextBoxFor(m => m.FullString, new { id = Html.IdFor(m => m), @class = "form-control" })
+@Html.HiddenFor(m => m.StartDateTime)
+@Html.HiddenFor(m => m.EndDateTime)
